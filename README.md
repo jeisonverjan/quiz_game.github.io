@@ -2,7 +2,7 @@
 
 ## Introduction
 
-With this application you can measure your knowledge of general culture, you can select the level of difficulty, the number of questions you can answer and the language you prefer (English / Spanish). At the end the application will tell you the number of correct answers you have obtained and the percentage.
+With this application you can measure your knowledge of general culture, you can select the level of difficulty, the number of questions you want to answer and the language you prefer (English / Spanish). At the end the application will tell you the number of correct answers you have gotten and the percentage.
 
 ## Operation
 
@@ -12,7 +12,7 @@ With this application you can measure your knowledge of general culture, you can
 
 ## How to run it?
 
-1. Instal python
+1. Install python
 2. Open the requirements.txt file and install the mentioned libraries.
 3. Download the repository.
 4. run the file main.py
