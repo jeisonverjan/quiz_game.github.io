@@ -1,4 +1,4 @@
-# Quiz Game - Genral culture
+# Quiz Game - General culture
 
 ## Introduction
 
