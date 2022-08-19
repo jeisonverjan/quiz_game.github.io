@@ -17,5 +17,3 @@ With this application you can measure your knowledge of general culture, you can
 3. Download the repository.
 4. run the file main.py
 
-
-<a href="http://example.com" target="_blank" rel="noopener">Link</a>
