@@ -2,4 +2,8 @@ from data import show_questions
 
 if __name__ == __name__:
     
-    show_questions()
+    exit = ''
+    while exit != 'x':
+        show_questions()
+        print('press "X" to exit, other key to continue')
+        exit = input().strip().lower()

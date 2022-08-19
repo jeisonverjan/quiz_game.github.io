@@ -1,4 +1,5 @@
 import requests
+import time
 import random
 from googletrans import Translator
 from colorama import Fore
@@ -136,6 +137,8 @@ def show_score(score, number_questions):
     if avarage < 50:
         print(f"\n{Fore.RED} You'll do better next time.")
         print(f"\n{Fore.RED} You got {score} answers out of {number_questions} questions right, which equals: {avarage}% \n")
+        time.sleep(1)
     else:
         print(f"\n{Fore.GREEN} Congratulation!!!")
         print(f"\n{Fore.GREEN} You got {score} answers out of {number_questions} questions right, which equals: {avarage}% \n")
+        time.sleep(1)
