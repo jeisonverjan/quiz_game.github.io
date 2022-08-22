@@ -4,7 +4,11 @@ import random
 from googletrans import Translator
 from colorama import Fore
 import colorama
+import googletrans
 colorama.init(autoreset=True)
+
+LANGUAGES = list(googletrans.LANGUAGES.keys())
+DIFFICULTY = ['easy', 'medium', 'hard', 'random']
 
 
 #This function get quiz question from the APi: https://the-trivia-api.com/
@@ -26,8 +30,8 @@ def get_question(difficulty, language):
     answers.append(data[0]['correctAnswer'])
 
     #if user chose Spanish the the funcion transalte_to_spanish() is call
-    if language == 'es':
-        question, right_answer, answers = translate_to_spanish(question, right_answer, answers)
+    if language != 'en':
+        question, right_answer, answers = translate_question(question, right_answer, answers, language)
 
     #Shuffling the array of answers
     random.shuffle(answers)
@@ -41,12 +45,12 @@ def get_question(difficulty, language):
 #This function translate the question and answers to Spanish, it use the library googletrans
 #Receive the quesion srt, the rignt answer str and answers array.
 #return question, right_answer, answers in Spanish
-def translate_to_spanish(question, right_answer, answers):
+def translate_question(question, right_answer, answers, language):
     translator = Translator()
-    question = translator.translate(question, src='en', dest='es').text
-    right_answer = translator.translate(right_answer, src='en', dest='es').text
+    question = translator.translate(question, src='en', dest=language).text
+    right_answer = translator.translate(right_answer, src='en', dest=language).text
     for i, element in enumerate(answers):
-        answers[i] = translator.translate(element, src='en', dest='es').text
+        answers[i] = translator.translate(element, src='en', dest=language).text
 
     return  question, right_answer, answers
 
@@ -56,17 +60,15 @@ def translate_to_spanish(question, right_answer, answers):
 #Return str with the difficulty, int with the number of question
 def game_introduction():
     print(f"\n \n {Fore.BLUE}!!!WELCOME TO QUIZ GAME!!! \n \n ")
-    difficulty = ['easy', 'medium', 'hard', 'random']
-    language = ['es', 'en']
     user_choise_difficulty = ''
     user_choise_questions = 1
     user_choise_language = ''
     while True:
         print('Write one of the following difficulties: \n')
-        print(difficulty)
+        print(DIFFICULTY)
         user_choise_difficulty = input().strip().lower()
-        if user_choise_difficulty not in difficulty:            
-            print('Write one of the available difficulties: ', difficulty)
+        if user_choise_difficulty not in DIFFICULTY:            
+            print('Write one of the available difficulties: ', DIFFICULTY)
             continue
         break
     while True:
@@ -81,11 +83,11 @@ def game_introduction():
         break
 
     while True:
-        print('\n Write your language: Espanish / English \n')
-        print(language)
+        print('\n Write your language: \n')
+        print(LANGUAGES)
         user_choise_language = input().strip().lower()
-        if user_choise_language not in language:
-            print('Write one of the available languages: ', language , 'Espanish / English')
+        if user_choise_language not in LANGUAGES:
+            print('Write one of the available languages:')
             continue
         else:
             break
