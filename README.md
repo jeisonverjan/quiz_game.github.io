@@ -9,8 +9,6 @@ With this application you can measure your knowledge of general culture, you can
 
 1. This application uses the API **https://the-trivia-api.com/** which provides a variety of multiple-choice questions related to general culture and their respective correct answers.
 2. After receiving the information **from https://the-trivia-api.com/**, the application converts the answers into a dictionary, presents them in the console and prompts the user for an answer (input(A, B, C, D).
-3. This application uses the API **https://the-trivia-api.com/** which provides a variety of multiple choice questions related to general culture and their respective correct answers.
-4. After receiving the information **from https://the-trivia-api.com/**, the application converts the asnwers into a dictionary, presents them in the console and prompts the user for an answer (input(A, B, C, D).
 3. If the user's answer is correct, a counter is triggered and a function handles the average performance and at the end it is displayed.
 
 ## How to run it?
